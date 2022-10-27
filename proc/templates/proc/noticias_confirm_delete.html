@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h2>Exclusão de registro</h2>
+<p>Você está certo que deseja excluir este registro?</p>
+{{ noticias.titulo }} | {{ noticias.data_cadastro }} | {{ noticias.categoria }}
+<hr>
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" value="Excluir">
+</form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %}
+
+{% block subtitle %}<h1 class="jumbotron-heading">Detalhes da Empresas {{ empresa.empresa }}</h1>{% endblock %}
+
+{% block content %}
+<style>
+    .container-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin:auto;
+    }
+    .lista {
+    display: grid;
+    color:blue;
+    }
+
+    .lista {
+    display: grid;
+    grid-template-columns: 250px 150px 150px 250px 150px 150px 150px 150px 100px 100px;
+
+    }
+    .lista1 {
+    display: grid;
+
+    }
+
+    .lista1 {
+    display: grid;
+    grid-template-columns: 250px 150px 150px 250px 150px 150px 150px 150px 100px 100px;
+    }
+</style>
+<div class="container-principal">
+<h1>Empresa: {{ empresa.empresa }} </h1>
+<p><strong>Cadastro: </strong>{{empresa.data_cadastro}}</p>
+<p><strong>CNPJ: </strong>{{empresa.cnpj}}</p>
+<p><strong>Razão Social: </strong>{{empresa.razao_social}}</p>
+<p><strong>Responsável: </strong>{{empresa.responsavel}}</p>
+<p><strong>Telefone: </strong>{{empresa.telefone}}</p>
+<p><strong>E-mail: </strong>{{empresa.email}}</p>
+<p><strong>Setor: </strong>{{empresa.setor}}</p>
+<p><a href="{% url 'empresas' %}" class="btn btn-light">Voltar »</a></p>
+</div>
+{% endblock %}

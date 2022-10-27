@@ -1,0 +1,52 @@
+{% extends "base_generic.html" %}
+
+{% block subtitle %}<h1 class="jumbotron-heading">Detalhes do Ativo {{ ativo.ativo }}</h1>{% endblock %}
+
+{% block content %}
+<style>
+    .container-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    margin:auto;
+    }
+    .lista {
+    display: grid;
+    color:blue;
+    }
+
+    .lista {
+    display: grid;
+    grid-template-columns: 250px 150px 150px 250px 150px 150px 150px 150px 100px 100px;
+    }
+    .lista1 {
+    display: grid;
+    }
+
+    .lista1 {
+    display: grid;
+    grid-template-columns: 250px 150px 150px 250px 150px 150px 150px 150px 100px 100px;
+    }
+</style>
+<div class="container-principal">
+<h1>Ativos: {{ ativos.ativo }} </h1>
+<p><strong>Cadastro: </strong>{{ativos.data_cadastro}}</p>
+<p><strong>Nr. do Bem: </strong>{{ativos.nr_bem}}</p>
+<p><strong>Fornecedor: </strong>{{ativos.fornecedor}}</p>
+<p><strong>Marca: </strong>{{ativos.marca}}</p>
+<p><strong>Modelo: </strong>{{ativos.modelo}}</p>
+<p><strong>Conta: </strong>{{ativos.conta}}</p>
+<p><strong>Centro Custo: </strong>{{ativos.centro_custo}}</p>
+<p><strong>Local: </strong>{{ativos.local}}</p>
+<p><strong>Aquisição: </strong>{{ativos.data_aquisicao}}</p>
+<p><strong>Vlr Custo:</strong>{{ativos.vlr_custo}}</p>
+<p><strong>Vlr Residual Descarte:</strong>{{ativos.vlr_residual_desc}}</p>
+
+<p><a href="{% url 'ativos' %}" class="btn btn-light">Voltar »</a></p>
+</div>
+
+
+{% endblock %}

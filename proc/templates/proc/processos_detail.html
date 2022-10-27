@@ -1,0 +1,47 @@
+{% extends "base_generic.html" %}
+
+{% block subtitle %}<h1 class="jumbotron-heading">Detalhes do Processo {{ processos.processo }}</h1>{% endblock %}
+
+{% block content %}
+<style>
+    .container-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    margin:auto;
+    }
+    .lista {
+    display: grid;
+    color:blue;
+    }
+
+    .lista {
+    display: grid;
+    grid-template-columns: 250px 150px 150px 250px 150px 150px 150px 150px 100px 100px;
+    }
+    .lista1 {
+    display: grid;
+    }
+
+    .lista1 {
+    display: grid;
+    grid-template-columns: 250px 150px 150px 250px 150px 150px 150px 150px 100px 100px;
+    }
+</style>
+<div class="container-principal">
+<h1>Processos: {{ processos.processo }} </h1>
+<p><strong>Cadastro: </strong>{{processos.data_cadastro}}</p>
+<p><strong>Produto: </strong>{{processos.produto}}</p>
+<p><strong>Empresa: </strong>{{processos.empresa}}</p>
+<p><strong>Início: </strong>{{processos.inicio}}</p>
+<p><strong>Término: </strong>{{processos.termino}}</p>
+<p><strong>Garantia: </strong>{{processos.garantia}}</p>
+<p><strong>Tempo Restante: </strong>{{processos.tempo_restante}}</p>
+<p><strong>Descrição: </strong>{{processos.descricao}}</p>
+<p><strong>Obs.:</strong>{{processos.observacao}}</p>
+<p><a href="{% url 'processos' %}" class="btn btn-light">Voltar »</a></p>
+</div>
+{% endblock %}

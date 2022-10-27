@@ -1,0 +1,58 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+     <div class="container">
+         <!-- Campo de Pesquisa -->
+
+        <!-- Fim do Campo de Pesquisa -->
+        <!-- Exemplo de linha de colunas -->
+
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Listar Relevante</h2>
+            <p>Acesso a lista de editais, portarias, bases legais, decretos cadastrados no sistema.</p>
+            <p><a class="btn btn-secondary" href="{% url 'noticias-list' %}" role="button">Ver detalhes »</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Cadastrar </h2>
+            <p>Cadastrar documentação relevante no sistema, e disponibilizá-la aos interessados.</p>
+            <p><a class="btn btn-secondary" href="{% url 'cadastrarnoticia' %}" role="button">Ver detalhes »</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Exportar Lista</h2>
+            <p>Exportar em 'xlsx' lista de documentação relevante do sistema, e disponibilizá-la aos interessados.</p>
+            <p><a class="btn btn-secondary" href="{% url 'noticias-excel' %}" role="button">Ver detalhes »</a></p>
+          </div>
+        </div>
+
+        <hr>
+
+      </div>
+
+    <footer class="text-muted">
+      <div class="container">
+          {% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">Anterior</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">Próximo</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %}
+      </div>
+    </footer>
+    {% else %}
+            {% block login %}
+            {% endblock %}
+    {% endif %}
+    {% endblock %}

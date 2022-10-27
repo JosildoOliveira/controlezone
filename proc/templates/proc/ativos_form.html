@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<style>
+    #corpomsg{
+    padding:auto;
+    margin:auto;
+    }
+</style>
+<div class="container" id="corpomsg">
+<h1>Cadastro de Ativos</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Salvar">
+</form>
+</div>
+{% endblock %}

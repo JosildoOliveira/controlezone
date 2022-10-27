@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block subtitle %}<h1 class="jumbotron-heading">Lista de Ativos</h1>{% endblock %}
+{% block content %}
+
+<style>
+
+</style>
+
+<div class="container-fluid">
+    <div class = "container">
+         <div class = "alert alert-warning">
+            <p>Sinto muito, mas você não tem privilégios de Administrador para esta tarefa!</p>
+             <p><a href="{% url 'ativos' %}" class="btn btn-primary my-2">Voltar</a></p>
+
+         </div>
+      </div>
+</div>
+{% endblock %}
